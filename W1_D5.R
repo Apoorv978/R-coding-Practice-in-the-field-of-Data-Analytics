@@ -1,0 +1,27 @@
+titanic.df <- read.csv(paste("Titanic Data.csv", sep=""))
+View(titanic.df)
+summary(titanic.df$Survived)
+summary(titanic.df)
+apply(titanic.df)
+library(psych)
+library(car)
+table(titanic.df$Sex,titanic.df$Survived)
+apply(titanic.df$Survived[,1:2],1,sum)
+prop.table(titanic.df$Survived)
+library(vcd)
+view(Arthritis)
+mytable <- table(titanic.df$Survived)
+prop.table(mytable)*100
+mytable <- table(titanic.df$Pclass,titanic.df$Survived)
+mytable <- xtabs(~ Survived+Sex, data = titanic.df)
+addmargins(mytable,1)
+chisq.test(mytable)
+margin.table(mytable,1)
+prop.table(mytable,2)*100
+mytable <- table(titanic.df$Sex)
+n1 <- prop.table(mytable)*100
+n2 <- prop.table(mytable1)*100
+table(n2,n1)
+mytable <- table(titanic.df$Survived)
+addmargins(mytable)
+margin.table(mytable,2)
